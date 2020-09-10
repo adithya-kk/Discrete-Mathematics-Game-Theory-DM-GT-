@@ -1,0 +1,129 @@
+#include<iostream.h>
+#include<conio.h>
+class graph
+{
+ public:
+ int a[10][10],b[10][10],c[10][10],d[10][10],f[10][10],e;
+ void adj_mat();
+ void Union();
+ void intersection();
+ void ring_sum();
+};
+void graph::adj_mat()
+{
+ cout<<"Enter no.of elements in graph : ";
+ cin>>e;
+ cout<<"Enter relation in graph 1 :"<<endl;
+ for(int i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<"("<<i<<","<<j<<"): ";
+   cin>>a[i][j];
+  }
+ }
+ cout<<"Enter relation in graph 2 :"<<endl;
+ for(i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<"("<<i<<","<<j<<"): ";
+   cin>>b[i][j];
+  }
+ }
+ cout<<"Your adjacency matrix of graph 1 :"<<endl;
+ for(i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<a[i][j]<<"     ";
+  }
+  cout<<endl;
+ }
+ cout<<"Your adjacency matrix of graph 2 :"<<endl;
+ for(i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<b[i][j]<<"     ";
+  }
+  cout<<endl;
+ }
+}
+void graph::Union()
+{
+ for(int i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   if(a[i][j]==1||b[i][j]==1)
+   c[i][j]=1;
+   else
+   c[i][j]=0;
+  }
+ }
+ cout<<"UNION of graph is:"<<endl;
+ for(i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<c[i][j]<<"     ";
+  }
+  cout<<endl;
+ }
+}
+void graph::intersection()
+{
+ for(int i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   if(a[i][j]==1&&b[i][j]==1)
+    d[i][j]=1;
+   else
+    d[i][j]=0;
+  }
+ }
+ cout<<"INTERSECTION of graph is:"<<endl;
+ for(i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<d[i][j]<<"     ";
+  }
+  cout<<endl;
+ }
+}
+void graph::ring_sum()
+{
+ for(int i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   if((a[i][j]==1&&b[i][j]==0)||a[i][j]==0&&b[i][j]==1)
+   f[i][j]=1;
+   else
+   f[i][j]=0;
+  }
+ }
+ cout<<"RING SUM of graph is:"<<endl;
+ for(i=1;i<=e;i++)
+ {
+  for(int j=1;j<=e;j++)
+  {
+   cout<<f[i][j]<<"     ";
+  }
+  cout<<endl;
+ }
+}
+
+void main()
+{
+ clrscr();
+ graph obj;
+ obj.adj_mat();
+ obj.Union();
+ obj.intersection();
+ obj.ring_sum();
+ getch();
+}

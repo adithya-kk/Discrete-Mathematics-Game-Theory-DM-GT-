@@ -1,0 +1,47 @@
+#includeiostream.h
+#includeconio.h
+
+void main()
+{
+ int i,j,k,n,a[10][10];
+ clrscr();
+ coutnEnter the number of nodes ;
+ cinn;
+ coutnEnter the elements into the matrixn;
+ for(i=0;in;i++)
+ {
+  for(j=0;jn;j++)
+  {
+   cina[i][j];
+  }
+ }
+ coutn--------------MATRIX--------------n;
+ for(i=0;in;i++)
+ {
+  for(j=0;jn;j++)
+  {
+   coutta[i][j];
+  }
+  coutn;
+ }
+ for(k=0;kn;k++)
+ {
+  for(i=0;in;i++)
+  {
+   for(j=0;jn;j++)
+   {
+    a[i][j]=a[i][j](a[i][k]&&a[k][j]);
+   }
+  }
+ }
+ coutnn----------TRANSITIVE MATRIX----------n;
+ for(i=0;in;i++)
+ {
+  for(j=0;jn;j++)
+  {
+   coutta[i][j];
+  }
+  coutendl;
+ }
+ getch();
+}

@@ -1,0 +1,28 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+int A[10];
+cout<<"Enter number of elements:\n";
+int n;
+cin>>n;
+for(int k=0;k<n;k++)
+{
+ cout<<"Enter Element:\n";
+ cin>>A[k];
+}
+int total=1<<n;
+for(int i=0;i<total;i++)
+{
+ for(int j=0;j<n;j++)
+ {
+  if((i>>j)&1)
+  {
+   cout<<A[j];
+  }
+ }
+ cout<<endl;
+}
+getch();
+}
